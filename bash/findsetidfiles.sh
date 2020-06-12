@@ -26,14 +26,39 @@ find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo ""
 
 
-#Displaying setgid files
+#task 1
+#script modified like that it displays setgid file on the second listing.
+# Displaying setgid files
 echo "Setgid files:"
+#setgid is special file permission that is applicable for executable file
+#echo command prints the exact given output as enclosed in "".
 echo "=============="
+#echo command prints the exact given output as enclosed in ""
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 4
+#only command display files with the permissions set to 2000.
+#find command is used to searching for the files.
+# / signifies home or root directory.
+#2> /dev/null redirects to /dev/null if error is encountered.
+#sort -k is used for sorting file on the basis of key.
+# | pipe is used for combining two or more commands.
 echo ""
+#echo command prints the exact given output as enclosed in ""
 
 
-#Displaying latest files
+#task 2
+#script is modified for displaying 10 largest regular files in system.
+# Displaying latest files.
 echo "Largest files:"
+#echo command prints the exact given output as enclosed in ""
 echo "============="
+#echo command prints the exact given output as enclosed in ""
 find / -type f -exec du -Sh {} + 2>/dev/null | sort -rh | head -n 10
+#find command is used to for files searching.
+# / signifies home/root directory.
+#2> /dev/null redirects to /dev/null if error is encountered.
+#du command estimates the disk usage.
+#du -sh compares the human readable numbers and it shows the total of for each argument.
+#sort -rh sorts value in human readable format and also reverses results.
+#{} are used to summarize the disk usage of each file.
+# | pipe is used for combining two or more commands.
+# head -n 10 displays first 10 files.
