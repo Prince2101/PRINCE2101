@@ -10,7 +10,7 @@
 
 # make a Pictures directory if we don't have one - assumes we have a home directory
 test -d ~/Pictures || mkdir ~/Pictures
-# || runs the socind command only if first command is unable to process.
+# || runs the second command only if first command is unable to process.
 
 # download a zipfile of pictures to our Pictures directory if it isn't already there - assumes you are online
 test -f ~/Pictures/pics.zip || wget -q -O ~/Pictures/pics.zip http://zonzorp.net/pics.zip
