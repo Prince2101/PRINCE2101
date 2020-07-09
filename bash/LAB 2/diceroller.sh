@@ -1,29 +1,26 @@
 #!/bin/bash
 #
-# this script rolls a pair of six-sided dice
+# this script rolls a six-sided die
 #
 
-# Improve this script by adding a second line of output showing a roll of 5 six-sided dice
-# Improve this script by adding a third line of output that rolls a single 20-sided die
-# These improvements should also take into consideration the user, and make all 3 output lines self-explanatory to the user
-#    - e.g. the first line should be changed to read something like:
-#         Rolling a pair of standard dice: x,y rolled
-#      and the other output lines should be similarly helpful to the user
+# Task: Improve this script by making it roll as many dice as there are letters in your first name, instead of just one
 
 # roll the dice and display the result
-echo "
-Rolling a pair of standrard dice : 6 side rolled
-Now it's Rolling...
-$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled
-"
-echo "
-Rolling a pair of standrard dice : 5,6 side rolled
-Now it's Rolling...
-$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1 )), $(( RANDOM % 6 + 1 )) rolled
-"
 
+echo "Enter your first name :"
+#echo command is used to print statement as it is in terminal
+read name
+# read command accepts user input
+length=${#name}
+# ${#..} calculates the length of string
+for ((c=1; c<=$length; c++))
+# using for loop such that condition executes until and unless value of c<=length of string. while each time condition executes the value of c is increased by one by use of c++ statement
+do
+# condition in for loop should be enclosed by do and done which intializes and ends for loop command execution
 echo "
-Rolling a pair of standrard dice : 20 side rolled
-Now it's Rolling...
-$(( RANDOM % 20 + 1)), $(( RANDOM % 20 + 1 )) rolled
+Rolling...
+$(( RANDOM % 6 + 1)) rolled
 "
+# Generating random results. As generated results should be less than 6 we use modulo operation 6 + 1.
+done
+#

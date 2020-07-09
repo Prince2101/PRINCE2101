@@ -1,16 +1,18 @@
 #!/bin/bash
 #
-# this script rolls a pair of six-sided dice and displays both the rolls and the sum
+# this script rolls a pair of six-sided dice and displays both the rolls
 #
 
-# Improve this script by re-organizing it to:
+# Task 1:
 #  put the number of sides in a variable which is used as the range for the random number
-#  put the bias, or offset, for the RANDOM number in a variable (it is 1 for our purposes)
-#     - you can think of this as the minimum value for the generated number
+#  put the bias, or minimum value for the generated number in another variable
 #  roll the dice using the variables for the range and bias i.e. RANDOM % range + bias
+
+# Task 2:
 #  generate the sum of the dice
 #  generate the average of the dice
-#  display a summary of what was rolled, and what the result was
+
+#  display a summary of what was rolled, and what the results of your arithmetic were
 
 # Tell the user we have started processing
 range=6
