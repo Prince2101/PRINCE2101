@@ -2,25 +2,27 @@
 #
 # this script demonstrates doing arithmetic
 
-# Improve this script by asking the user to supply the two numbers
-# Improve this script by demonstrating using subtraction and multiplication
-# Improve this script by demonstrating the modulus operation
-#   - the output should look something like:
-#   - first divided by second gives X with a remainder of Y
-# Improve this script by calculating and displaying the first number raised to the power of the second number
+# Task 1: Remove the assignments of numbers to the first and second number variables. Use one or more read commands to get 3 numbers from the user.
+# Task 2: Change the output to only show:
+#    the sum of the 3 numbers with a label
+#    the product of the 3 numbers with a label
 
-echo Please Enter the First Number
-read firstnum
-echo Please Enter the Second Number
-read secondnum
-sum=$((firstnum + secondnum))
-dividend=$((firstnum / secondnum))
-fpdividend=$(awk "BEGIN{printf \"%.2f\", $firstnum/$secondnum}")
-remainder=$((firstnum % secondnum))
+printf "Enter first number:"
+read -r firstnumber
+# user input the first number
+printf "Enter second number:"
+read secondnumber
+# user input the second number
+printf "Enter third number:"
+read thirdnumber
+# user input the third number
+
+sum=$(($firstnumber + $secondnumber + $thirdnumber))
+# calculating the sum
+product=$(($firstnumber * $secondnumber * $thirdnumber))
+# calculating the product
 
 cat <<EOF
-$firstnum plus $secondnum is $sum
-$firstnum divided by $secondnum is $dividend
-  - More precisely, it is $fpdividend
-$firstnum divided by $secondnum gives $dividend with a remainder of $remainder
+$firstnumber plus $secondnumber plus $thirdnumber is $sum
+product of $firstnumber,$secondnumber and $thirdnumber is $product
 EOF
